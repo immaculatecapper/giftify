@@ -4,6 +4,11 @@ Giftify is a private wish-list app. Every user has a profile and can make wish l
 
 **Part 1 release:** backend only. Node.js, Express (MVC), MongoDB with Mongoose, and JWT authentication. Every API is tested with Postman/Newman.
 
+## Project links
+- **Demo video (Part 1):** https://youtu.be/nU_fmmJhThI
+- **Trello board (Product Backlog & Task Board):** https://trello.com/b/MYDxTSsJ/giftify-team-mark
+- **GitHub repository:** https://github.com/immaculatecapper/giftify
+
 ## Tech stack
 - Node.js 18+, Express 4 (ES modules)
 - MongoDB Atlas + Mongoose 8
