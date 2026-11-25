@@ -1,0 +1,25 @@
+# Render Blueprint - one free web service runs the Express API AND serves the React build.
+# Render > New > Blueprint > pick this repo. Every push to main redeploys automatically (CD).
+services:
+  - type: web
+    name: giftify
+    runtime: node
+    plan: free
+    branch: main
+    autoDeploy: true
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /api
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: NODE_ENV
+        value: production
+      # Cypress is only for local E2E tests - don't download its 500 MB binary on the server
+      - key: CYPRESS_INSTALL_BINARY
+        value: "0"
+      # Paste your MongoDB Atlas connection string when Render asks (database name: Giftify)
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true

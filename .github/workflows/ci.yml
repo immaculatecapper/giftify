@@ -1,0 +1,35 @@
+# Continuous Integration: every push and pull request runs the unit tests and the production build.
+# Continuous Deployment: Render (render.yaml) redeploys automatically when main changes.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+    env:
+      CYPRESS_INSTALL_BINARY: 0
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            client/package-lock.json
+      - name: Install server dependencies
+        run: npm ci
+      - name: Install client dependencies
+        run: npm ci --prefix client
+      - name: Unit tests (Vitest + React Testing Library)
+        run: npm run test:unit
+      - name: Production build
+        run: npm run build --prefix client
+      - name: Check the server starts and serves the app
+        run: |
+          node -e "import('./server/express.js').then(({default: app}) => { const s = app.listen(3999, async () => { const r = await fetch('http://localhost:3999/api'); const h = await fetch('http://localhost:3999/'); console.log(r.status, (await r.json()).message, h.status); s.close(); process.exit(r.ok && h.ok ? 0 : 1) }) })"

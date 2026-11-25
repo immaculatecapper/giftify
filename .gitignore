@@ -2,3 +2,7 @@ node_modules/
 .env
 tests/results/
 .DS_Store
+client/dist/
+client/test-report/
+cypress/videos/
+cypress/screenshots/
