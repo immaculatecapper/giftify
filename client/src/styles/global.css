@@ -1168,3 +1168,13 @@ ol {
     width: 100%;
   }
 }
+
+/* holiday announcement (CI/CD demo) */
+.announce {
+  margin: 40px 0 0;
+  padding: 16px 20px;
+  border-radius: var(--radius);
+  background: var(--green-50);
+  border: 1px solid #a7f3d0;
+  color: #065f46;
+}

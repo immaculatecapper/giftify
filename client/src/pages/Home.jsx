@@ -60,6 +60,14 @@ function Landing() {
         </div>
       </section>
 
+      {/* CI/CD demo: added on the feature/holiday-banner branch and merged into main */}
+      <section className="container">
+        <p className="announce">
+          🎄 <strong>New for the holidays:</strong> every wish list now shows a countdown to the big day, so your friends
+          know exactly how long they have to shop.
+        </p>
+      </section>
+
       <section className="container section">
         <h2 className="section-title">How Giftify works</h2>
         <ol className="steps">
