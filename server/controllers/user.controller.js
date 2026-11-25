@@ -69,6 +69,8 @@ const read = async (req, res) => {
       followingCount: following,
       // "none" | "pending" | "accepted" | "self"
       followStatus: isSelf(req.auth, user._id) ? 'self' : myFollow ? myFollow.status : 'none',
+      // lets the front end cancel a request / unfollow without another lookup
+      followId: myFollow ? myFollow._id : null,
     })
   } catch (err) {
     return res.status(400).json({ error: errorHandler.getErrorMessage(err) })

@@ -11,6 +11,9 @@ router.route('/api/wishlists')
   .get(authCtrl.requireSignin, wishlistCtrl.listMine)
   .post(authCtrl.requireSignin, wishlistCtrl.create)
 
+// Wish lists from people I follow (home page feed)
+router.route('/api/feed').get(authCtrl.requireSignin, wishlistCtrl.feed)
+
 // A single wish list - followers can read, only the owner can change
 router.route('/api/wishlists/:wishlistId')
   .get(authCtrl.requireSignin, wishlistCtrl.canView, wishlistCtrl.read)

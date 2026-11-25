@@ -1,5 +1,6 @@
 import Wishlist from '../models/wishlist.model.js'
 import Item from '../models/item.model.js'
+import Follow from '../models/follow.model.js'
 import errorHandler from '../helpers/dbErrorHandler.js'
 import { isSelf, isAdmin, canViewContentOf } from '../helpers/access.js'
 
@@ -107,4 +108,20 @@ const remove = async (req, res) => {
   }
 }
 
-export default { create, listMine, listByUser, wishlistByID, canView, isOwner, read, update, remove }
+// GET /api/feed - wish lists from everyone I follow (approved follows only), soonest event first.
+// Powers the "Friends' wish lists" section on the signed-in home page.
+const feed = async (req, res) => {
+  try {
+    const follows = await Follow.find({ follower: req.auth._id, status: 'accepted' }).select('following')
+    const ids = follows.map((f) => f.following)
+    const lists = await Wishlist.find({ owner: { $in: ids } })
+      .populate('owner', 'name username avatarUrl')
+      .sort({ eventDate: 1, created: -1 })
+      .limit(50)
+    return res.json(await withCounts(lists))
+  } catch (err) {
+    return res.status(400).json({ error: errorHandler.getErrorMessage(err) })
+  }
+}
+
+export default { feed, create, listMine, listByUser, wishlistByID, canView, isOwner, read, update, remove }

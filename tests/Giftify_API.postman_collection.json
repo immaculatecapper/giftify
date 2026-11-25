@@ -92,11 +92,11 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{baseUrl}}/",
+              "raw": "{{baseUrl}}/api",
               "host": [
                 "{{baseUrl}}"
               ],
-              "path": []
+              "path": ["api"]
             },
             "auth": {
               "type": "noauth"
