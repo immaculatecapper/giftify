@@ -8,7 +8,7 @@ Giftify is a private wish-list app. Every user has a profile and can make wish l
 | **Part 2** | **React front end connected to the API, full CRUD from the UI, authenticated navigation, unit tests (Vitest), E2E tests (Cypress + cy.prompt AI), performance work, cloud deployment (Render + MongoDB Atlas), CI/CD (GitHub Actions + Render auto-deploy)** |
 
 ## Project links
-- **Live site:** _add your Render URL here_ (e.g. https://giftify.onrender.com)
+- **Live site:** https://giftify-0hns.onrender.com (Render free tier: the first visit after 15 idle minutes takes ~50 s to wake up)
 - **Demo video (Part 1):** https://youtu.be/nU_fmmJhThI
 - **Trello board (Product Backlog & Task Board):** https://trello.com/b/MYDxTSsJ/giftify-team-mark
 - **GitHub repository:** https://github.com/immaculatecapper/giftify
