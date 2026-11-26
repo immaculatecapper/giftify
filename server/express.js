@@ -53,9 +53,13 @@ const dist = fileURLToPath(new URL('../client/dist', import.meta.url))
 if (fs.existsSync(path.join(dist, 'index.html'))) {
   // Hashed files in /assets never change, so browsers can cache them for a year
   app.use('/assets', express.static(path.join(dist, 'assets'), { immutable: true, maxAge: '1y' }))
-  app.use(express.static(dist, { maxAge: '1h' }))
+  // index.html is never cached, so a normal refresh always picks up a new release
+  app.use(express.static(dist, { index: false, maxAge: '1h' }))
   // Any other GET is a React Router page: send index.html
-  app.get('*', (req, res) => res.sendFile(path.join(dist, 'index.html')))
+  app.get('*', (req, res) => {
+    res.set('Cache-Control', 'no-cache')
+    res.sendFile(path.join(dist, 'index.html'))
+  })
 } else {
   app.get('/', (req, res) => res.json({ message: 'Welcome to the Giftify API.' }))
 }
