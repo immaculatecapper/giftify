@@ -6,7 +6,8 @@
 
 describe('AI (cy.prompt) – generated commands', () => {
   it('signs in and creates a wish list', () => {
-    const user = { email: Cypress.expose?.('aiEmail') || 'ai-user@test.giftify', password: 'Password1' }
+    // the real run used a fresh test account created in before(); these are placeholders
+    const user = { email: 'ai-user@test.giftify', password: 'Password1' }
 
     // Prompt Step: visit /signin
     cy.visit('/signin')
