@@ -9,6 +9,7 @@ Giftify is a private wish-list app. Every user has a profile and can make wish l
 
 ## Project links
 - **Live site:** https://giftify-0hns.onrender.com (Render free tier: the first visit after 15 idle minutes takes ~50 s to wake up)
+- **Demo video (Part 2):** https://youtu.be/I1BJ3Gju5Mg
 - **Demo video (Part 1):** https://youtu.be/nU_fmmJhThI
 - **Trello board (Product Backlog & Task Board):** https://trello.com/b/MYDxTSsJ/giftify-team-mark
 - **GitHub repository:** https://github.com/immaculatecapper/giftify
