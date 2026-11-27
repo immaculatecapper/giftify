@@ -11,8 +11,9 @@
     "seed": "node server/seed/seed.js",
     "test:api": "node tests/run-api-tests.js",
     "test:unit": "npm test --prefix client",
-    "test:e2e": "cypress run",
-    "cypress:open": "cypress open"
+    "test:e2e": "cypress run --spec \"cypress/e2e/0[1-4]_*.cy.js\"",
+    "cypress:open": "cypress open",
+    "test:e2e:ai": "cypress open --e2e --browser electron"
   },
   "author": "Mark Perez (Team Mark)",
   "license": "MIT",

@@ -2,8 +2,8 @@
 // cy.prompt turns plain-English steps into real Cypress commands and shows the code it generated
 // ("Code" button in the Command Log), which can be saved back into the spec.
 // Requires signing in to Cypress Cloud in the Cypress app (free plan works), or running with --record.
-// Skipped automatically if Cypress is older than 15 or not logged in: run it with
-//   npx cypress open  ->  E2E  ->  05_ai_prompt.cy.js
+// Not part of "npm run test:e2e" (it needs a Cloud sign-in). Run it with  npm run test:e2e:ai
+//   then pick 05_ai_prompt.cy.js in the Cypress app.
 describe('AI (cy.prompt) – create a wish list in plain English', () => {
   let user
 

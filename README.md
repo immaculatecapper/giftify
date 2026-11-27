@@ -69,7 +69,8 @@ client/src/
 |---|---|
 | `npm run test:unit` | 28 Vitest / React Testing Library unit tests (components, pages, API client, helpers) |
 | `npm run test:report --prefix client` | same tests + an HTML report in `client/test-report/` (open with `npx vite preview --outDir test-report`) |
-| `npm run test:e2e` | Cypress E2E specs in `cypress/e2e` headless, saves videos to `cypress/videos` (start the app first) |
+| `npm run test:e2e` | Cypress E2E specs 01–04 headless, saves videos to `cypress/videos` (start the app first) |
+| `npm run test:e2e:ai` | Opens the Cypress app for the AI spec `05_ai_prompt.cy.js` (`cy.prompt`, needs a free Cypress Cloud sign-in) |
 | `npm run cypress:open` | Cypress app (interactive). Sign in to Cypress Cloud to run the AI spec `05_ai_prompt.cy.js` (`cy.prompt`) |
 | `npm run test:api` | 86 Postman requests / 128 assertions with Newman against a separate `Giftify_test` database |
 
