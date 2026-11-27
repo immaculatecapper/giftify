@@ -27,7 +27,7 @@ describe('AI (cy.prompt) – create a wish list in plain English', () => {
         'click the "My Lists" link in the navigation bar',
         'click the "+ New Wish List" button',
         'type "Graduation party" in the "Title" field',
-        'select "Graduation" in the "Occasion" dropdown',
+        'select the option with value "graduation" in the "Occasion" dropdown',
         'click the "Create list" button in the dialog',
         'verify the page shows a wish list card containing "Graduation party"',
       ],
