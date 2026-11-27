@@ -3,6 +3,8 @@ import { defineConfig } from 'cypress'
 // End-to-end tests. Start the app first (npm run dev, or npm run build && npm start),
 // then: npx cypress open   (interactive)   or   npm run test:e2e   (headless, records videos)
 export default defineConfig({
+  // Cypress Cloud project (needed for --record and the cy.prompt AI spec). Not a secret; the record key is.
+  projectId: 'ey3av9',
   e2e: {
     baseUrl: process.env.CYPRESS_BASE_URL || 'http://localhost:5173',
     specPattern: 'cypress/e2e/**/*.cy.js',
