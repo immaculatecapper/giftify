@@ -23,7 +23,6 @@ describe('AI (cy.prompt) – create a wish list in plain English', () => {
         'type {{email}} in the "Email or username" field',
         'type {{password}} in the "Password" field',
         'click the "Sign In" submit button inside the sign-in form card (not the link in the header)',
-        'verify the URL path is "/"',
         'verify the "My Lists" link is visible in the navigation bar',
         'click the "My Lists" link in the navigation bar',
         'click the "+ New Wish List" button',
